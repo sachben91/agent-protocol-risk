@@ -1,0 +1,59 @@
+{
+  "slug": "a2a",
+  "name": "A2A",
+  "fullName": "Agent-to-Agent Protocol",
+  "by": "Google Cloud",
+  "type": "Agent ↔ Agent",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 1",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "website": "https://google.github.io/A2A",
+  "spec": "https://google.github.io/A2A/specification/",
+  "summary": "Well-designed enterprise coordination protocol. Agent Cards enable discovery without central registries. But 50+ corporate partners and Google's backing create a gravitational pull that may become hard to resist — the protocol could become the 'enterprise default' before alternatives mature.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Task lifecycle states (submitted → working → completed) provide clear visibility."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Broad scope. Tries to handle discovery, delegation, streaming, security — many edge cases."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Agent Cards lack cryptographic signatures — impersonation possible. Success/failure can be ambiguous in multi-hop delegation."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Significant overlap with ACP, ANP, and AITP. Multiple protocols solving similar problems."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "Multi-agent delegation can create recursive task chains that are hard to trace."
+    },
+    "exitCost": {
+      "risk": "bad",
+      "note": "50+ enterprise partners building on A2A. Switching costs compound with each integration."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "Enterprise teams increasingly frame agent architecture in A2A terms. 'Agent Card thinking' is becoming an identity."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Agents define their own capabilities. No central authority dictates behavior."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Google's influence is visible now but may become invisible as A2A becomes 'just how agents talk.'"
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "Some FOMO-driven adoption — 'everyone else is on A2A.' Enterprise herd behavior."
+    }
+  }
+}

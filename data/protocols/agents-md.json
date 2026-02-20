@@ -1,0 +1,57 @@
+{
+  "slug": "agents-md",
+  "name": "AGENTS.md",
+  "fullName": "Agent Instructions Standard",
+  "by": "OpenAI → AAIF",
+  "type": "Agent Conventions",
+  "archetype": "whitehead",
+  "stage": "social",
+  "maturity": "Stage 2",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "summary": "A deceptively simple Markdown file — like README.md but for AI agents — that tells coding agents how to behave in a repo. 60,000+ projects adopted it in months. Its brilliance is its simplicity; its danger is that it's becoming an implicit social expectation. Repos without AGENTS.md may become invisible to agents, creating a soft mandate nobody voted on. The protocol is already transitioning from 'explicit opt-in' to 'social expectation' — Asparouhova's Stage 2.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Agent behavior changes are immediately observable in code output. Clear cause-and-effect."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Simple Markdown format. No edge cases by design — just instructions."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Instructions are natural language, interpreted by LLMs. Same AGENTS.md can produce different behavior across models."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Overlaps with .cursorrules, .claude, CLAUDE.md, and other agent-specific config files."
+    },
+    "nesting": {
+      "risk": "good",
+      "note": "Flat file. No nesting or recursion possible."
+    },
+    "exitCost": {
+      "risk": "warning",
+      "note": "60K+ repos. Codex, Cursor, Devin, Gemini CLI, GitHub Copilot all read it. Not having one increasingly means agents work blind in your repo."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "Becoming a social norm: 'every serious repo has an AGENTS.md.' Not having one signals you're not AI-ready."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Developers write the file. Full control over what agents see. But agents choose how to interpret it."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "The standard itself is invisible infrastructure — nobody thinks about whether to adopt it, it just becomes expected. Classic implicit protocol formation."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'Your repo needs to be agent-ready' — soft urgency driving adoption as table stakes."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Protocol",
+  "type": "object",
+  "required": ["name", "fullName", "by", "type", "slug", "archetype", "stage", "maturity", "overallRisk", "summary", "kafkaIndex", "dangerousProtocol", "lastUpdated"],
+  "properties": {
+    "slug": { "type": "string" },
+    "name": { "type": "string" },
+    "fullName": { "type": "string" },
+    "by": { "type": "string" },
+    "type": { "type": "string" },
+    "archetype": { "enum": ["whitehead", "bartleby", "kafka"] },
+    "stage": { "enum": ["explicit", "social", "identity"] },
+    "maturity": { "type": "string" },
+    "overallRisk": { "enum": ["good", "warning", "bad", "critical"] },
+    "lastUpdated": { "type": "string", "format": "date" },
+    "summary": { "type": "string" },
+    "website": { "type": "string" },
+    "spec": { "type": "string" },
+    "kafkaIndex": {
+      "type": "object",
+      "required": ["feedbackLoop", "edgeCases", "ambiguity", "redundancy", "nesting", "exitCost"],
+      "additionalProperties": false,
+      "properties": {
+        "feedbackLoop": { "$ref": "#/definitions/dimension" },
+        "edgeCases":    { "$ref": "#/definitions/dimension" },
+        "ambiguity":    { "$ref": "#/definitions/dimension" },
+        "redundancy":   { "$ref": "#/definitions/dimension" },
+        "nesting":      { "$ref": "#/definitions/dimension" },
+        "exitCost":     { "$ref": "#/definitions/dimension" }
+      }
+    },
+    "dangerousProtocol": {
+      "type": "object",
+      "required": ["identityPenetration", "agencyPreservation", "controlInvisibility", "crisisMindset"],
+      "additionalProperties": false,
+      "properties": {
+        "identityPenetration":  { "$ref": "#/definitions/dimension" },
+        "agencyPreservation":   { "$ref": "#/definitions/dimension" },
+        "controlInvisibility":  { "$ref": "#/definitions/dimension" },
+        "crisisMindset":        { "$ref": "#/definitions/dimension" }
+      }
+    }
+  },
+  "definitions": {
+    "dimension": {
+      "type": "object",
+      "required": ["risk", "note"],
+      "properties": {
+        "risk": { "enum": ["good", "warning", "bad", "critical", "neutral"] },
+        "note": { "type": "string" },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "url"],
+            "properties": {
+              "label": { "type": "string" },
+              "url": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

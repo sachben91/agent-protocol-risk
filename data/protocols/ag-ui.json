@@ -1,0 +1,59 @@
+{
+  "slug": "ag-ui",
+  "name": "AG-UI",
+  "fullName": "Agent-User Interaction Protocol",
+  "by": "CopilotKit",
+  "type": "Agent ↔ User",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 1",
+  "overallRisk": "good",
+  "lastUpdated": "2025-02-19",
+  "website": "https://ag-ui.com",
+  "spec": "https://ag-ui.com/docs",
+  "summary": "Perhaps the most Whitehead-like protocol in the stack — explicitly designed to keep humans in the loop. The 17 event types give users visibility into what agents are doing. But the risk is that 'human-in-the-loop' becomes performative — a rubber stamp rather than genuine oversight.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Excellent. 17 typed events (lifecycle, messages, tool calls, state) provide granular visibility."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Clean event model. Each type has a clear purpose."
+    },
+    "ambiguity": {
+      "risk": "good",
+      "note": "Typed events eliminate ambiguity. STATE_DELTA uses JSON Patch — deterministic."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Overlaps with A2UI. CopilotKit positions them as complementary but the boundary is blurry."
+    },
+    "nesting": {
+      "risk": "good",
+      "note": "Flat event stream. No recursive nesting by design."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Lightweight protocol. Multiple backend frameworks supported. Switching is feasible."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "good",
+      "note": "Low. Developers see it as plumbing, not ideology."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Explicitly designed for human-in-the-loop. Users can interrupt, redirect, cancel."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Risk: as agents get better, humans may stop actually reading the event stream. Oversight becomes ritual."
+    },
+    "crisisMindset": {
+      "risk": "good",
+      "note": "No urgency narrative. Positioned as pragmatic infrastructure."
+    }
+  }
+}

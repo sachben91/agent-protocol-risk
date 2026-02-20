@@ -1,0 +1,59 @@
+{
+  "slug": "x402",
+  "name": "x402",
+  "fullName": "HTTP 402 Payment Protocol",
+  "by": "Coinbase + Cloudflare",
+  "type": "Payments",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 1",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "website": "https://x402.org",
+  "spec": "https://x402.org/spec",
+  "summary": "Elegant resurrection of HTTP 402. The simplicity is genuinely Whitehead-like — pay-per-request without accounts. But autonomous agent payments without human oversight introduce a novel 'sorcerer's apprentice' risk that Asparouhova warns about: protocols that run unchecked.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "402 → pay → 200 is maximally transparent. Payment receipts on-chain."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Single, clear flow. Facilitator handles complexity."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "V2 introduces deferred payments, credit billing — ambiguity creeping in."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Overlaps with AP2 for agent payments. x402 Foundation + AP2 extension creates layering."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "Facilitator chain: agent → server → facilitator → blockchain. Failure at any point is opaque to the agent."
+    },
+    "exitCost": {
+      "risk": "warning",
+      "note": "100M+ payments processed. Network effects building. Coinbase facilitator has ~70% share."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "x402 developers identify with the 'internet money' narrative. Token prices of related projects surging — financial identity layer."
+    },
+    "agencyPreservation": {
+      "risk": "bad",
+      "note": "Agents pay autonomously. The HUMAN is increasingly removed from the payment loop — agency transferred to protocol."
+    },
+    "controlInvisibility": {
+      "risk": "bad",
+      "note": "Micropayments are designed to be invisible. By definition, you stop noticing them. This is the speed bump problem."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'The internet needs native payments NOW' — urgency framing drives adoption."
+    }
+  }
+}

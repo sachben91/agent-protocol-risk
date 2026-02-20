@@ -1,0 +1,59 @@
+{
+  "slug": "oasf",
+  "name": "OASF",
+  "fullName": "Open Agentic Schema Framework",
+  "by": "AGNTCY (Cisco/LangChain)",
+  "type": "Discovery & Registry",
+  "archetype": "bartleby",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "website": "https://oasf.agntcy.org",
+  "spec": "https://oasf.agntcy.org/docs",
+  "summary": "An agent's 'resume' — a schema that describes what an agent can do, what it costs, and how to invoke it, so other agents can discover and 'hire' it. Part of the broader AGNTCY 'Internet of Agents' initiative. The Bartleby risk is real: the schema demands agents describe themselves in a highly structured way, which limits expression. Agents that don't fit the schema's categories become invisible. Like job listings that filter out unconventional candidates, OASF could inadvertently narrow what agents are allowed to be.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "warning",
+      "note": "Registry discovery is asynchronous. No clear signal when your agent description is wrong or ignored."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Schema must describe arbitrary agent capabilities — edge cases proliferate as agents diversify."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Capability descriptions are semantic. Different agents may interpret the same schema differently."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Competes with A2A Agent Cards, ANP agent descriptors, and agents.json for agent discovery."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "OASF → Agent Connect Protocol → distributed registry. Multiple layers for a discovery request."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Early stage. Cisco/LangChain backing provides credibility but low lock-in so far."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "'Internet of Agents' framing is aspirational. Cisco enterprise credibility lends weight."
+    },
+    "agencyPreservation": {
+      "risk": "warning",
+      "note": "Agents must conform to schema to be discovered. Non-conforming agents are invisible — soft coercion."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Registries that determine what is findable are inherently invisible controllers. Like SEO for agents."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'Agents need to find each other — we need a registry' — moderate urgency framing."
+    }
+  }
+}

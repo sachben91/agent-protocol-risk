@@ -1,0 +1,59 @@
+{
+  "slug": "aitp",
+  "name": "AITP",
+  "fullName": "Agent Interaction & Transaction Protocol",
+  "by": "NEAR Foundation",
+  "type": "Agent ↔ Agent (Cross-trust)",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "website": "https://aitp.dev",
+  "spec": "https://aitp.dev/spec",
+  "summary": "Specifically addresses cross-trust-boundary interactions — the hardest problem. Capability modules (payments, decisions, identity) are well-scoped. But blockchain dependency and NEAR ecosystem ties create a subtle lock-in that contradicts the open protocol narrative.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Thread-based communication provides clear conversation history. On-chain verification."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Extensible capability modules mean edge cases grow with each AITP-0X spec."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Cross-trust negotiation is inherently ambiguous — agents from different orgs may interpret capabilities differently."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Overlaps with A2A, x402, and AP2. Transaction capabilities duplicate x402's payment flow."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "Threads containing capability messages containing structured data — 3 levels of nesting."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Early stage. NEAR ecosystem dependency is the main cost."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "NEAR/Web3 identity is strong. AITP inherits the 'decentralized future' narrative."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Agents negotiate terms. Users can set constraints on what their agent can agree to."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Blockchain verification is visible, but the agent's negotiation logic is opaque to the user."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'The Internet of Agents needs a protocol NOW' — urgency framing."
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "slug": "mcp",
+  "name": "MCP",
+  "fullName": "Model Context Protocol",
+  "by": "Anthropic",
+  "type": "Context & Tools",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 2",
+  "overallRisk": "good",
+  "lastUpdated": "2025-02-19",
+  "website": "https://modelcontextprotocol.io",
+  "spec": "https://spec.modelcontextprotocol.io",
+  "summary": "Clean client-server design with clear primitives. Developers explicitly opt in, understand the contract, and can swap implementations. But its dominance risks becoming the 'only game in town' — a gentle lock-in through ubiquity rather than coercion.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Clear request/response. Errors are visible and debuggable via JSON-RPC."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Four clean primitives (Resources, Tools, Prompts, Sampling). Happy path is obvious."
+    },
+    "ambiguity": {
+      "risk": "good",
+      "note": "Deterministic tool invocation. Same inputs → same routing."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Overlaps with A2A's tool-calling features and ACP's agent invocation."
+    },
+    "nesting": {
+      "risk": "good",
+      "note": "Flat architecture. No recursive protocol chains."
+    },
+    "exitCost": {
+      "risk": "warning",
+      "note": "100K+ stars, deep ecosystem lock-in. Switching is technically easy but socially expensive — the 'QWERTY problem'."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "Developers increasingly identify as 'MCP-first' builders. The protocol is becoming a tribal marker."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Participants retain full control over which tools to expose and how."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "MCP's constraints (what can/can't be a tool) shape agent design invisibly — you build what MCP makes easy."
+    },
+    "crisisMindset": {
+      "risk": "good",
+      "note": "No urgency narrative. Adoption is driven by utility, not fear of being left behind."
+    }
+  }
+}

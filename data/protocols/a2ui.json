@@ -1,0 +1,57 @@
+{
+  "slug": "a2ui",
+  "name": "A2UI",
+  "fullName": "Agent-to-User Interface",
+  "by": "Google",
+  "type": "Agent ↔ User (UI)",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "summary": "A generative UI specification where agents dynamically create rich interactive interfaces on-the-fly — not a transport protocol but a UI format. Framework-agnostic (React, Flutter, SwiftUI). The Whitehead promise is strong: agents that can show you what they're doing through real UI, not just text. But the risk is subtle: when agents generate their own interfaces, they also control what you see and don't see. The agent becomes both the actor and the set designer.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "warning",
+      "note": "Agent generates the UI that displays its own results — it controls the feedback loop. Circular trust problem."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Rendering across React, Flutter, SwiftUI from a single spec means many edge cases per platform."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "What UI an agent generates for the same task can vary. Non-deterministic presentation layer."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Overlaps with AG-UI, MCP-UI, MCP Apps, Open-JSON-UI. Crowded space."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "A2UI sits on top of A2A/AG-UI transport. UI spec within a transport protocol within an agent protocol."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Early stage (v0.8 preview). Low adoption, low exit cost. Apache 2.0."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "good",
+      "note": "Too early for identity formation. Developers see it as a spec to evaluate."
+    },
+    "agencyPreservation": {
+      "risk": "warning",
+      "note": "Users interact with agent-generated UI. The agent decides what controls to show — subtle loss of agency over interface."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Generative UI is inherently invisible control: the agent shapes your perception by choosing what to render."
+    },
+    "crisisMindset": {
+      "risk": "good",
+      "note": "No urgency narrative. Google positioned it as experimental preview."
+    }
+  }
+}

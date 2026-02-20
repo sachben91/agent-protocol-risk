@@ -1,0 +1,57 @@
+{
+  "slug": "ucp",
+  "name": "UCP",
+  "fullName": "Universal Commerce Protocol",
+  "by": "Google + Shopify",
+  "type": "Commerce",
+  "archetype": "bartleby",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "bad",
+  "lastUpdated": "2025-02-19",
+  "summary": "The most ambitious — and most dangerous — protocol in the stack. 'Universal' commerce means UCP aspires to become the implicit protocol governing all agentic buying. Co-developed by Google and Shopify with Walmart, Target, and 20+ retailers. When the biggest players agree on a protocol, smaller participants have no real choice. The Bartleby risk: merchants who refuse to adopt will simply become invisible to agents.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "warning",
+      "note": "Business profiles are visible, but how agents rank and select merchants is opaque."
+    },
+    "edgeCases": {
+      "risk": "bad",
+      "note": "Commerce is inherently edge-case-heavy. Fulfillment, returns, loyalty, subscriptions — sprawling complexity."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Capability negotiation between agent and merchant can produce ambiguous outcomes."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Layered on AP2, A2A, and MCP. Four protocols stacked to buy a product."
+    },
+    "nesting": {
+      "risk": "bad",
+      "note": "UCP → AP2 → A2A → MCP. Recursive, nested protocol stack with multiple dead ends possible."
+    },
+    "exitCost": {
+      "risk": "critical",
+      "note": "'Universal' protocol backed by Google, Shopify, Walmart, Target. If you're a merchant and agents can't find you via UCP, you don't exist."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "bad",
+      "note": "Early but trajectory is clear — 'UCP merchant' will become identity, like 'Shopify merchant' already is."
+    },
+    "agencyPreservation": {
+      "risk": "bad",
+      "note": "Merchants retain some control via extensions, but the base protocol dictates what's possible. Agents, not humans, decide what to buy."
+    },
+    "controlInvisibility": {
+      "risk": "critical",
+      "note": "Commerce protocols are the most invisible of all. UCP aims to sit between every buyer-agent and every seller. This is the panopticon for commerce."
+    },
+    "crisisMindset": {
+      "risk": "bad",
+      "note": "'NRF 2026 launch. AI Mode in Search. If you're not on UCP, shoppers won't find you.' Classic crisis-driven adoption."
+    }
+  }
+}

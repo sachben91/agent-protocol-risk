@@ -1,0 +1,58 @@
+{
+  "slug": "agent-gateway",
+  "name": "Agent Gateway",
+  "fullName": "Agent Gateway / agentgateway",
+  "by": "Solo.io → Linux Foundation",
+  "type": "Security & Governance",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "good",
+  "lastUpdated": "2025-02-19",
+  "website": "https://agentgateway.dev",
+  "summary": "A Rust-based proxy that sits between agents and their targets (MCP servers, A2A agents, LLMs, APIs), adding security, auth, rate limiting, and observability. This is the protocol-level equivalent of a network firewall for agents. Crucially, Agent Gateway makes other protocols MORE visible — it's an anti-Kafka tool that adds feedback loops and audit trails where none existed. Paired with Kagent for Kubernetes-native agent orchestration.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Explicitly designed to ADD feedback loops: metrics, tracing, audit logs for all agent traffic."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Must support MCP, A2A, REST, and LLM inference protocols simultaneously — many edge cases in translation."
+    },
+    "ambiguity": {
+      "risk": "good",
+      "note": "Policy enforcement is deterministic: auth passes or fails, rate limits are clear."
+    },
+    "redundancy": {
+      "risk": "good",
+      "note": "Unique positioning — no other protocol specifically addresses agent security at the proxy layer."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "Adds another layer to every agent interaction: agent → gateway → target. Extra hop, extra potential failure."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Early stage, open source. Gateway layer is interchangeable by design."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "good",
+      "note": "Pure infrastructure. No identity formation around 'gateway builders.'"
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Increases participant agency — gives operators visibility and control over agent traffic they didn't have before."
+    },
+    "controlInvisibility": {
+      "risk": "good",
+      "note": "Makes control MORE visible, not less. This is the rare protocol that counteracts the invisibility problem."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'MCP has security gaps — you need a gateway NOW' — some urgency framing, but grounded in real vulnerabilities."
+    }
+  }
+}

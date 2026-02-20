@@ -1,0 +1,57 @@
+{
+  "slug": "anp",
+  "name": "ANP",
+  "fullName": "Agent Network Protocol",
+  "by": "Community",
+  "type": "Agent ↔ Agent (Decentralized)",
+  "archetype": "bartleby",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "summary": "Philosophically committed to decentralization (DIDs, JSON-LD, E2E encryption). But Asparouhova's insight applies: decentralization doesn't prevent protocolization — it can make it harder to detect. And ANP's complexity (three-layer architecture) risks the Bartleby problem: too much agency demanded of participants, limiting adoption.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "warning",
+      "note": "Decentralized systems inherently have weaker feedback loops — who do you complain to?"
+    },
+    "edgeCases": {
+      "risk": "bad",
+      "note": "Three-layer architecture (identity, meta-protocol, application) creates many failure modes."
+    },
+    "ambiguity": {
+      "risk": "bad",
+      "note": "Meta-protocol layer uses AI to negotiate protocols at runtime. Outcomes are non-deterministic by design."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Competes with A2A, ACP, AITP for the same inter-agent communication space."
+    },
+    "nesting": {
+      "risk": "bad",
+      "note": "Identity → meta-protocol → application layer. Agents negotiate protocols within protocols."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Early stage. Low adoption means low exit cost — but also low value from participation."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "Decentralization-as-identity is already strong in Web3 communities. ANP inherits this."
+    },
+    "agencyPreservation": {
+      "risk": "warning",
+      "note": "High agency by design, but complexity may exceed what most participants can manage — the Bartleby trap."
+    },
+    "controlInvisibility": {
+      "risk": "warning",
+      "note": "Decentralized protocols are the hardest to see — 'no one runs it' means no one is accountable."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'We need decentralization before the corporates take over' — fear-driven narrative."
+    }
+  }
+}

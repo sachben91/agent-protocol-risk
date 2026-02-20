@@ -1,0 +1,58 @@
+{
+  "slug": "elizaos",
+  "name": "ElizaOS",
+  "fullName": "ElizaOS Agent Framework",
+  "by": "Eliza Labs (ai16z)",
+  "type": "Agent Runtime (Web3)",
+  "archetype": "kafka",
+  "stage": "social",
+  "maturity": "Stage 1",
+  "overallRisk": "critical",
+  "lastUpdated": "2025-02-19",
+  "website": "https://elizaos.ai",
+  "summary": "The most Kafkaesque protocol in the stack. A TypeScript agent framework with 90+ plugins, deeply integrated with blockchain, DeFi, and token economies. $ELIZAOS token ($20B+ ecosystem market cap) creates powerful financial incentives that make the protocol's control nearly impossible to resist or exit. Agents autonomously trade tokens, manage wallets, and execute DeFi strategies. The combination of financial identity, autonomous on-chain action, and token-driven governance creates a perfect storm of invisible control — Asparouhova's worst-case scenario.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "warning",
+      "note": "On-chain transactions are visible, but agent reasoning (why it traded) is opaque to most participants."
+    },
+    "edgeCases": {
+      "risk": "bad",
+      "note": "90+ plugins across blockchain, social media, DeFi. Enormous surface area with many failure modes."
+    },
+    "ambiguity": {
+      "risk": "bad",
+      "note": "Autonomous trading decisions are non-deterministic. Same market conditions can produce different agent actions."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Competes with Goose, Virtuals, Myshell. But token economy creates different competitive dynamics."
+    },
+    "nesting": {
+      "risk": "bad",
+      "note": "Agent → LLM → plugin → smart contract → DeFi protocol. Deep nesting with each layer having its own failure modes."
+    },
+    "exitCost": {
+      "risk": "critical",
+      "note": "$ELIZAOS token locks participants financially. Token migration from ai16z added complexity. Selling tokens = exiting the network = losing community."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "critical",
+      "note": "Token holders ARE the community. Financial identity and social identity are fused. 'I'm an ElizaOS builder' = financial position + social belonging."
+    },
+    "agencyPreservation": {
+      "risk": "bad",
+      "note": "Agents trade autonomously. Users set broad parameters but can't predict specific decisions. Auto.fun democratizes agent creation but obscures what agents actually do."
+    },
+    "controlInvisibility": {
+      "risk": "critical",
+      "note": "The most invisible control in the stack: token incentives shape behavior without anyone explicitly commanding it. You think you're 'investing' — you're being protocolized."
+    },
+    "crisisMindset": {
+      "risk": "bad",
+      "note": "'The future of AI is on-chain. Don't miss the next wave.' Classic crypto urgency + FOMO driving adoption."
+    }
+  }
+}

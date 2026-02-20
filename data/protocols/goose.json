@@ -1,0 +1,59 @@
+{
+  "slug": "goose",
+  "name": "Goose",
+  "fullName": "Goose Agent Framework",
+  "by": "Block → AAIF",
+  "type": "Agent Runtime",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 1",
+  "overallRisk": "good",
+  "lastUpdated": "2025-02-19",
+  "website": "https://block.github.io/goose",
+  "spec": "https://block.github.io/goose/docs",
+  "summary": "The most 'boring' protocol in the stack — and that's exactly why it's valuable. Born inside Block (Square, Cash App) as production infrastructure, Goose is a local-first agent runtime built on MCP. Its 'ordinariness' makes it the neutral reference implementation that AAIF needs. Like Kubernetes was to containers, Goose aims to be the boring-but-essential execution layer for agents. Low danger because it's explicit, auditable, and deliberately un-opinionated.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Local-first design means all actions visible on user's machine. CLI + desktop app provide full transparency."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Clean extension model via MCP. Modular plugin system with clear boundaries."
+    },
+    "ambiguity": {
+      "risk": "good",
+      "note": "Tool calls are explicit JSON. Actions are logged and traceable."
+    },
+    "redundancy": {
+      "risk": "warning",
+      "note": "Competes with ElizaOS, LangGraph, AutoGen, CrewAI for the 'agent framework' space."
+    },
+    "nesting": {
+      "risk": "good",
+      "note": "Flat: user → agent → extensions. No recursive agent chains by default."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "Open source, Apache licensed. Local-first means no vendor lock-in. Low switching cost."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "good",
+      "note": "Low. Developers see it as plumbing. No tribal identity forming around Goose."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "User controls which extensions load, which model to use, what actions are allowed."
+    },
+    "controlInvisibility": {
+      "risk": "good",
+      "note": "Deliberately transparent. Local execution means no hidden cloud processing."
+    },
+    "crisisMindset": {
+      "risk": "good",
+      "note": "No urgency narrative. Block framed it as infrastructure donation, not competitive necessity."
+    }
+  }
+}

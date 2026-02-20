@@ -1,0 +1,57 @@
+{
+  "slug": "ap2",
+  "name": "AP2",
+  "fullName": "Agent Payments Protocol",
+  "by": "Google",
+  "type": "Payments",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "warning",
+  "lastUpdated": "2025-02-19",
+  "summary": "Mandates (cryptographic proofs of user intent) are a sophisticated answer to 'did the human actually want this?' But 60+ corporate partners and payment-agnostic design means AP2 could become the invisible rails beneath all agentic commerce — an implicit protocol governing every transaction.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Mandates create auditable proof of authorization. Clear paper trail."
+    },
+    "edgeCases": {
+      "risk": "warning",
+      "note": "Payment-agnostic (cards, crypto, bank transfers) means many edge cases per payment method."
+    },
+    "ambiguity": {
+      "risk": "warning",
+      "note": "Delegated tasks ('buy tickets when available') have ambiguous success criteria."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "x402, AITP payments, and AP2 all compete in agent payments. A2A x402 extension adds another layer."
+    },
+    "nesting": {
+      "risk": "warning",
+      "note": "AP2 → A2A → x402 extension creates a 3-layer payment stack."
+    },
+    "exitCost": {
+      "risk": "bad",
+      "note": "60+ partners including Mastercard, PayPal, Amex. Once merchants integrate, switching is extremely costly."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "warning",
+      "note": "Not yet — but commerce protocols historically become invisible infrastructure (credit card networks)."
+    },
+    "agencyPreservation": {
+      "risk": "warning",
+      "note": "Intent Mandates preserve some agency, but delegated mandates ('buy when you see a deal') hand control to the agent."
+    },
+    "controlInvisibility": {
+      "risk": "bad",
+      "note": "Payment protocols are the canonical example of invisible control. Visa's protocol governs billions of transactions, yet nobody 'sees' it."
+    },
+    "crisisMindset": {
+      "risk": "warning",
+      "note": "'Agentic commerce is coming whether you're ready or not' — urgency framing from Google."
+    }
+  }
+}

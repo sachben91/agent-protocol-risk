@@ -1,0 +1,59 @@
+{
+  "slug": "acp",
+  "name": "ACP",
+  "fullName": "Agent Communication Protocol",
+  "by": "IBM BeeAI → Linux Foundation",
+  "type": "Agent ↔ Agent (Lightweight)",
+  "archetype": "whitehead",
+  "stage": "explicit",
+  "maturity": "Stage 0",
+  "overallRisk": "good",
+  "lastUpdated": "2025-02-19",
+  "website": "https://agentcommunicationprotocol.dev",
+  "spec": "https://agentcommunicationprotocol.dev/introduction/overview",
+  "summary": "The deliberately simple alternative to A2A. REST-native, no SDK required — works with curl. Multimodal (text, images, audio, video) via MIME types. ACP's design philosophy is anti-Kafka: reduce complexity, not add it. The risk is the Bartleby problem in reverse — it might be TOO simple for the complexity of real multi-agent systems, leading participants to bolt on complexity until ACP loses its simplicity advantage.",
+  "kafkaIndex": {
+    "feedbackLoop": {
+      "risk": "good",
+      "note": "Standard HTTP status codes. Clear request/response. Errors are visible."
+    },
+    "edgeCases": {
+      "risk": "good",
+      "note": "Deliberately minimal. REST verbs (GET, POST, PUT, DELETE) handle all cases."
+    },
+    "ambiguity": {
+      "risk": "good",
+      "note": "HTTP semantics are well-understood. No novel abstractions to misinterpret."
+    },
+    "redundancy": {
+      "risk": "bad",
+      "note": "Directly competes with A2A for the agent-to-agent communication space. Google's momentum is overwhelming."
+    },
+    "nesting": {
+      "risk": "good",
+      "note": "Flat REST calls. No recursive protocol chains."
+    },
+    "exitCost": {
+      "risk": "good",
+      "note": "No SDK dependency. Standard HTTP. Trivial to switch away from."
+    }
+  },
+  "dangerousProtocol": {
+    "identityPenetration": {
+      "risk": "good",
+      "note": "No tribal identity. IBM/BeeAI branding is understated."
+    },
+    "agencyPreservation": {
+      "risk": "good",
+      "note": "Maximum agency — any HTTP client works. No framework lock-in."
+    },
+    "controlInvisibility": {
+      "risk": "good",
+      "note": "REST is the most visible, well-understood protocol pattern in software. Nothing hidden."
+    },
+    "crisisMindset": {
+      "risk": "good",
+      "note": "No urgency narrative. Positioned as pragmatic alternative, not revolutionary necessity."
+    }
+  }
+}
