@@ -17,6 +17,12 @@ export function Nav() {
 
         <div className="flex items-center gap-6">
           <Link
+            href="/analysis"
+            className="text-sm text-gray-500 hover:text-gray-900 transition-colors no-underline"
+          >
+            Analysis
+          </Link>
+          <Link
             href="/methodology"
             className="text-sm text-gray-500 hover:text-gray-900 transition-colors no-underline"
           >
